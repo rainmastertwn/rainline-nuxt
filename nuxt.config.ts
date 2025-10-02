@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     buildAssetsDir: '/static/'
   },
   devtools: { enabled: true },
+  experimental: {
+    payloadExtraction: false
+  },
   runtimeConfig: {
     public: {
       youtubeApiKey: process.env.YOUTUBE_API_KEY,
