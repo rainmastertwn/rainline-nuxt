@@ -1,0 +1,1 @@
+import{_ as n,c as s,a as r,F as t,o as l}from"#entry";const o=""+new URL("banner.BSA_hVC6.jpg",import.meta.url).href,a={};function c(f,e){return l(),s(t,null,[e[0]||(e[0]=r("img",{class:"w-full object-cover",src:o},null,-1)),e[1]||(e[1]=r("div",{class:"h-[1000px] w-full"},null,-1))],64)}const u=n(a,[["render",c]]);export{u as default};
