@@ -107,7 +107,7 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #555;
   background-color: var(--color-white-set);
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
 }
 
 // set mobile/pad can not swipe to left / right

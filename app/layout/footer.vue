@@ -38,7 +38,7 @@ const currentYear = ref(new Date().getFullYear())
           <img class="mb-2" src="~/assets/images/logo-text.png" alt="" srcset="" />
           <p class="text-white-set text-lg tracking-[2px]">112063 台北市北投區清江路247巷8號1樓</p>
         </div>
-        <div class="flex flex-col justify-around">
+        <div class="flex flex-col items-center justify-around">
           <p class="text-white-set text-lg tracking-[2px]">
             電話：02-2898-6207 / 傳真：02-2898-6132
           </p>
