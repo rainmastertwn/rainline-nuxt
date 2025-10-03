@@ -118,7 +118,7 @@ const hideDropdown = (): void => {
                 </div>
               </div>
             </div>
-            <div class="flex flex-col items-center border-r-1 border-red-secondary px-4">
+            <div class="flex flex-col items-center px-4">
               <h3 class="text-xl text-red-secondary mb-4">工地用臨時水溝</h3>
               <div class="grid grid-cols-1">
                 <div class="flex flex-col items-center">
@@ -194,7 +194,7 @@ const hideDropdown = (): void => {
                 </div>
               </div>
             </div>
-            <div class="flex flex-col items-center border-r-1 border-red-secondary px-4">
+            <div class="flex flex-col items-center px-4">
               <div class="grid grid-cols-1">
                 <div class="flex flex-col items-center">
                   <NuxtLink to="#">
