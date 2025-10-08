@@ -4,8 +4,9 @@ import HeaderMenu from './headerMenu.vue'
 import HeaderDropDown from './headerDropDown.vue'
 import ButtonBorder from '~/components/common/buttonBorder.vue'
 
-const toggleBurger = (): void => {
-  console.log('mobile burger toggled')
+const mobileMenuStatus = ref<boolean>(false)
+const toggleMenu = (): void => {
+  mobileMenuStatus.value = !mobileMenuStatus.value
 }
 
 const dropDownActive = ref<string>('')
@@ -48,7 +49,7 @@ const hideDropdown = (): void => {
           </div>
         </div>
 
-        <HeaderMenu @toggleBurger="toggleBurger" />
+        <HeaderMenu :mobileMenuStatus="mobileMenuStatus" @toggleBurger="toggleMenu" />
       </div>
     </div>
     <!-- nav menu -->
@@ -213,6 +214,18 @@ const hideDropdown = (): void => {
       </HeaderDropDown>
     </div>
   </header>
+  <!-- mobile content -->
+  <div class="mobile-content block lg:hidden" :class="{ 'menu-open': mobileMenuStatus }">
+    <div class="container">
+      <ul class="mx-2 mt-[60px] flex flex-col">
+        <li v-for="item in menuItems" :key="item.label">
+          <NuxtLink class="text-xl" :href="item.to">
+            {{ item.label }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -243,6 +256,57 @@ const hideDropdown = (): void => {
       color: var(--color-red-secondary);
       background-color: var(--color-white-set);
       box-shadow: 0 3px 8px rgb(0, 0, 0, 0.5);
+    }
+  }
+}
+
+$menu-item: 5;
+
+.mobile-content {
+  position: fixed;
+  top: 82px;
+  left: 0;
+  z-index: 999;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  color: #fff;
+  background: rgb(242, 70, 70, 1);
+  transition:
+    all 0.4s ease-out,
+    background 0.8s ease-out;
+  transition-delay: 0.2s;
+
+  ul li {
+    padding-bottom: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    opacity: 0;
+    transition:
+      transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99),
+      opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    border-bottom: 1px solid #fff;
+    transform: scale(1.15) translateY(-30px);
+
+    @for $i from 1 through $menu-item {
+      &:nth-child(#{$i}) {
+        transition-delay: #{0.56 - ($i * 0.07)}s;
+      }
+    }
+  }
+
+  &.menu-open {
+    height: calc(100vh - 82px);
+
+    ul li {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+
+      @for $i from 1 through $menu-item {
+        &:nth-child(#{$i}) {
+          transition-delay: #{0.07 * $i + 0.2}s;
+        }
+      }
     }
   }
 }

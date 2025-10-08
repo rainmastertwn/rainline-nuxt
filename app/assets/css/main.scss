@@ -43,3 +43,30 @@
     transform: translateY(0);
   }
 }
+
+// dialog close icon style setting
+.close-icon-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3000; // override v-loading wrap
+}
+
+.el-dialog {
+  position: relative;
+  overflow: hidden auto;
+
+  &.product-dialog {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+
+    @media (width < 64rem) {
+      width: calc(100% - 32px);
+    }
+
+    .el-dialog__header {
+      padding: 0;
+    }
+  }
+}
