@@ -6,7 +6,7 @@
       產品資訊
     </h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 animate-up delay-2">
-      <div class="product border-1 border-red-secondary rounded-xl overflow-hidden p-6">
+      <div class="product rounded-3xl overflow-hidden p-6">
         <img
           class="w-[80%] h-auto lg:h-full max-h-none lg:max-h-[250px] mx-auto mb-4"
           src="~/assets/images/index/product1.webp"
@@ -15,7 +15,7 @@
         />
         <p class="text-2xl text-red-secondary text-center">Rain Line U型截水溝</p>
       </div>
-      <div class="product border-1 border-red-secondary rounded-xl overflow-hidden p-6">
+      <div class="product rounded-3xl overflow-hidden p-6">
         <img
           class="w-[80%] h-auto lg:h-full max-h-none lg:max-h-[250px] mx-auto mb-4"
           src="~/assets/images/index/product2.webp"
@@ -30,6 +30,13 @@
 
 <style lang="scss" scoped>
 .product {
+  box-shadow: rgb(50, 50, 93, 0.3) 0 2px 16px;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: rgb(240, 70, 70, 0.3) 0 4px 24px;
+  }
+
   img {
     transition: transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
 
