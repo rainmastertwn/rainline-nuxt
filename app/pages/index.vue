@@ -12,21 +12,21 @@ import PartnerSection from '~/components/index/partnerSection.vue'
 
 <template>
   <!-- banner section -->
-  <BannerSection class="mb-16" banner="index" />
+  <BannerSection class="mb-16 lg:mb-20" banner="index" />
   <!-- intro section -->
-  <IntroSection class="mb-16" />
+  <IntroSection class="mb-16 lg:mb-20" />
   <!-- product section -->
-  <ProductSection class="mb-16" />
+  <ProductSection class="mb-16 lg:mb-20" />
   <!-- application section -->
-  <ApplicationSection class="mb-16" />
+  <ApplicationSection class="mb-16 lg:mb-20" />
   <!-- showcase section -->
   <ShowcaseSection class="mb-16" />
   <!-- video section -->
-  <VideoSection class="mb-16" />
+  <VideoSection class="mb-16 lg:mb-20" />
   <!-- product use case section -->
-  <ProductUseCaseSection class="mb-16" />
+  <ProductUseCaseSection class="mb-16 lg:mb-20" />
   <!-- company section -->
-  <CompanyProfileSection class="mb-16" />
+  <CompanyProfileSection class="mb-16 lg:mb-20" />
   <!-- partner section -->
-  <PartnerSection class="mb-24" />
+  <PartnerSection class="mb-16 lg:mb-24" />
 </template>

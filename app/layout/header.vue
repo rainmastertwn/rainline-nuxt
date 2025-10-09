@@ -9,6 +9,10 @@ const toggleMenu = (): void => {
   mobileMenuStatus.value = !mobileMenuStatus.value
 }
 
+const closeMenu = (): void => {
+  mobileMenuStatus.value = false
+}
+
 const dropDownActive = ref<string>('')
 const showDropdown = (label: string, dropDown?: boolean): void => {
   if (dropDown) {
@@ -61,6 +65,7 @@ const hideDropdown = (): void => {
           :class="{ active: dropDownActive === item.label }"
           v-for="item in menuItems"
           :key="item.label"
+          :to="item.to"
           @mouseenter="showDropdown(item.label, item.dropDown)"
         >
           {{ item.label }}
@@ -219,7 +224,7 @@ const hideDropdown = (): void => {
     <div class="container">
       <ul class="mx-2 mt-[60px] flex flex-col">
         <li v-for="item in menuItems" :key="item.label">
-          <NuxtLink class="text-xl" :href="item.to">
+          <NuxtLink class="text-xl" :href="item.to" @click="closeMenu">
             {{ item.label }}
           </NuxtLink>
         </li>
@@ -240,6 +245,7 @@ const hideDropdown = (): void => {
 
   .nav-box {
     border-radius: 0 0 16px 16px;
+    box-shadow: 0 2px 8px rgb(0, 0, 0, 0.3);
     transition:
       height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
       line-height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),

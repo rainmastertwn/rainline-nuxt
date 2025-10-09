@@ -31,16 +31,16 @@
 <style lang="scss" scoped>
 .product {
   box-shadow: rgb(50, 50, 93, 0.3) 0 2px 16px;
-  transition: box-shadow 0.3s ease-in-out;
-
-  &:hover {
-    box-shadow: rgb(240, 70, 70, 0.3) 0 4px 24px;
-  }
+  transition: box-shadow 0.4s cubic-bezier(0.4, 2, 0.6, 1);
 
   img {
     transition: transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
+  }
 
-    &:hover {
+  &:hover {
+    box-shadow: rgb(240, 70, 70, 0.3) 0 4px 24px;
+
+    img {
       transform: scale(1.1);
     }
   }

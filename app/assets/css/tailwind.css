@@ -10,7 +10,9 @@
   --color-black: #555;
   --color-white-set: #f7f7f7;
   --color-red-primary: #f02233;
-  --color-red-secondary: #f24646;
+  /* --color-red-secondary: #f24646; */
+  --color-red-secondary: #e62030;
+  --color-red-third: ##e74c3c;
   --color-red-notice: #c93333;
   --color-gray-set: #efefef;
 }
